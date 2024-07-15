@@ -252,6 +252,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: #121212; /* Replace with the color of your navbar */
     display: block;
   }
+
+  .navbar-collapse .nav-link {
+    padding: 10px 15px; /* More padding around links */
+    text-align: center; /* Center-align text */
+  }
+
+ 
+  
+  span.navbar-text {
+    align-items: center;
+  }
+
 }
 
 /************ Banner Css ************/
@@ -419,11 +431,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-slider .item img {
-  height: 100px; /* Fixed height for consistency */
-  width: auto; /* Adjust width automatically to maintain aspect ratio */
-  object-fit: cover; /* Cover the area without losing aspect ratio */
-  margin: 0 auto 15px auto;
+  max-width: 100%; /* Ensure images don't exceed the item width */
+  height: 80px; /* Adjust height automatically to maintain aspect ratio */
+  object-fit: contain; /* Ensure the image is fully visible */
+  margin: 0 auto; /* Center the image within the item */
 }
+
+.skill-slider .item {
+  text-align: center; /* Center the text (and image if needed) within the item */
+  padding: 10px; /* Add some padding around the items */
+}
+
 
 /* Skills adjustments for mobile screens */
 @media (max-width: 768px) {
@@ -450,210 +468,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
   /* Adjustments for the Technologies section if used */
   .tech-item img {
-    width: 60%; /* Adjust technology icons size */
+    width: 50%; /* Adjust technology icons size */
   }
 
   .tech-item h5 {
     font-size: 14px; /* Adjust technology name font size */
   }
-}
-
-
-/************ Projects Css ************/
-
-.project {
-  padding: 80px 0;
-  position: relative;
-  background-color: black;
-}
-.project .row {
-  justify-content: center;
-}
-.all-project {
-  padding: 130px 0;
-  position: relative;
-  background-color: black;
-}
-.project h2 {
-	font-size: 45px;
-	font-weight: 700;
-  text-align: center;
-}
-
-.project p {
-  color: #B8B8B8;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  margin: 14px auto 30px auto;
-  text-align: center;
-  width: 56%;
-}
-
-.project .nav.nav-pills {
-  width: 72%;
-  margin: 0 auto;
-  border-radius: 50px;
-  background-color: rgb(255 255 255 / 10%);
-  overflow: hidden;
-}
-
-.project .nav.nav-pills .nav-item {
-  width: 33.33333%;
-}
-
-.project .nav.nav-pills .nav-link {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 17px 0;
-  color: #fff;
-  width: 100%;
-  font-size: 17px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s ease-in-out;
-  text-align: center;
-  z-index: 0;
-}
-.project .nav.nav-pills .nav-link::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: 0.3s ease-in-out;
-}
-
-.project .nav.nav-pills .nav-link.active::before {
-    width: 100% !important;
-}
-
-.project .nav.nav-pills .nav-link.active {
-    border: 1px solid rgba(255, 255, 255, 1);
-}
-
-.nav-link#projects-tabs-tab-first {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 55px 0px 0px 55px;
-}
-
-.nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.nav-link#projects-tabs-tab-third {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
-}
-
-.proj-imgbx {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 24px;
-  display: flex;
-  height: 400px;
-}
-
-.proj-imgbx::before {
-  content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  opacity: 0.85;
-  position: absolute;
-  width: 100%;
-  height: 0;
-  transition: 0.4s ease-in-out;
-}
-
-.proj-imgbx:hover::before {
-  height: 100%;
-}
-
-.proj-txtx {
-  position: absolute;
-  text-align: center;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
-  opacity: 0;
-  width: 100%;
-}
-
-.proj-imgbx:hover .proj-txtx {
-  top: 50%;
-  opacity: 1;
-}
-
-.proj-txtx h4 {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1.1em;
-}
-
-.proj-txtx span {
-  font-style: italic;
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 0.8px;
-}
-
-.project button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 4px;
-  position: relative;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
-}
-
-.project button span {
-  z-index: 1;
-  position: relative;
-}
-
-.project button:hover {
-  background-color: #121212;
-  color: #fff;
-}
-
-.project button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #121212;
-  z-index: 0;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-
-.project button:hover::before {
-  opacity: 1;
-}
-
-/* Styling for the Link inside the button */
-.project button .view-more-link {
-  color: inherit; /* Inherits color from the button */
-  text-decoration: none; /* Removes underline */
-  transition: color 0.3s ease-in-out; /* Smooth transition for color */
-}
-
-/* Hover effects for the button and Link */
-.project button:hover, .project button:hover .view-more-link {
-  color: #fff; /* White text on hover */
 }
 
 
@@ -991,51 +811,47 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 
-/************ Projects2 Css ************/
 
 
-.project h3 {
-  text-align: center; /* Center align the heading */
-  margin-bottom: 30px; /* Spacing below the heading */
+
+
+.custom-projects-section {
+  padding: 2rem 0;
 }
 
-.card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for cards */
-  transition: transform 0.3s ease-in-out; /* Smooth transformation on hover */
+.custom-heading {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.card:hover {
-  transform: scale(1.05); /* Enlarges the card */
-  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+.custom-view-more-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-/* Projects adjustments for mobile screens */
-@media (max-width: 768px) {
-  .project h3 {
-    font-size: 24px; /* Adjust heading font size */
-  }
+.custom-view-more-button {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
-  .project .card {
-    margin-bottom: 20px; /* Adjust bottom margin for each card */
-  }
+.project-card {
+  margin: 0 auto; /* Center the card horizontally */
+}
 
-  .project .card-img-top {
-    height: auto; /* Ensure image height is auto for responsiveness */
-    width: 100%; /* Ensure image takes full width */
-  }
+.project-card .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .project .card-title {
-    font-size: 18px; /* Adjust card title font size */
-  }
-
-  .project .card-text {
-    font-size: 14px; /* Adjust card text font size */
-  }
-
-  .project .view-more-link button {
-    padding: 12px 20px; /* Adjust button padding */
-    font-size: 16px; /* Adjust button font size */
-  }
+.project-card .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -1079,3 +895,5 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     transform: rotate(360deg);
   }
 }
+
+

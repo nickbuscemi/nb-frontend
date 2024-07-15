@@ -12,6 +12,8 @@ export const NavBar = () => {
     
     const [activeLink, setActiveLink] = useState('home'); 
     const [scrolled, setScrolled] = useState(false);
+    const [expanded, setExpanded] = useState(false);
+
 
     useEffect(() => {
         const onScroll = () => {
@@ -32,19 +34,19 @@ export const NavBar = () => {
     };   
     
     return (
-        <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
+        <Navbar expand="lg" className={scrolled ? "scrolled": ""} expanded={expanded}>
             <Container>
                 <Navbar.Brand href="#home">
                     <img src={BUSCEMIflat} alt="Logo" width={200} height={100}/>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}>
                     <span className='navbar-toggler-icon'></span>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav" className='custom-navbar-collapse'>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-                    <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-                    <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                    <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('home'); setExpanded(false);}}>Home</Nav.Link>
+                    <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('skills'); setExpanded(false);}}>Skills</Nav.Link>
+                    <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('projects'); setExpanded(false);}}>Projects</Nav.Link>
                 </Nav>
                 <span className='navbar-text'>
                     <div className='social-icon'>
@@ -52,7 +54,7 @@ export const NavBar = () => {
                         <a href='https://github.com/nickbuscemi'><img src={githubIcon} alt='' /></a>
                         <a href='https://www.instagram.com/'><img src={navIcon3} alt='' /></a>
                     </div>
-                    <Nav.Link href="#connect" onClick={() => { onUpdateActiveLink('connect'); console.log('connecting'); }}>
+                    <Nav.Link href="#connect" onClick={() => { onUpdateActiveLink('connect'); setExpanded(false); console.log('connecting'); }}>
                         <button className='vvd connect-btn'>
                             <span>Let's Connect</span>
                         </button>
@@ -66,3 +68,4 @@ export const NavBar = () => {
 }
 
 
+ 

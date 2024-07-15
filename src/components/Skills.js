@@ -33,7 +33,14 @@ export const Skills = () => {
                         <div className="skill-bx">
                             <h2>Skills</h2>
                             <p>Gained through a combination of Degree coursework, Coding BootCamp curriculum, and years of self-education</p>
-                            <Carousel responsive={responsive} infinite={true} className="skill-slider">
+                            <Carousel 
+                                responsive={responsive} 
+                                infinite={true} 
+                                className="skill-slider"
+                                autoPlay={true}
+                                autoPlaySpeed={3000}
+                                ssr={true} // Means to render carousel on server-side.
+                                >
                                 {skillsObj.map((skill, index) => (
                                     <div className="item" key={index}>
                                     <img src={skill.imgSrc} alt={skill.name} />
@@ -41,6 +48,7 @@ export const Skills = () => {
                                     </div>
                                 ))}
                             </Carousel>
+
                         </div>
                     </Col>
                 </Row>
