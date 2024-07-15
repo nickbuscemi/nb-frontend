@@ -165,7 +165,7 @@ export const Contact = () => {
                                         </Row>
 
                                         {/* Submit Button - Centered */}
-                                        <Row className="mt-3">
+                                        <Row className="pb-8">
                                             <Col className="text-center">
                                                 <button type="submit" className="btn btn-primary"><span>{buttonText}</span></button>
                                             </Col>

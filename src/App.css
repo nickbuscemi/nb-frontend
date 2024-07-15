@@ -54,14 +54,13 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  transition: 0.32s ease-in-out;
 }
 
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
-
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -74,7 +73,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 span.navbar-text {
@@ -88,14 +87,33 @@ span.navbar-text {
 }
 
 .custom-navbar-collapse {
-  background-color: #121212; /* Replace with the color of your navbar */
-  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  text-align: center;
 }
 
-.me-auto {
-  display: inline-flexa;
-  align-items: flex-start;
+.custom-navbar-collapse .navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 44px;
 }
+
+.custom-navbar-collapse .navbar-nav .nav-link {
+  padding: 15px 0;
+  font-size: 44px;
+}
+
+.custom-navbar-collapse .navbar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 
 
 /*social icons*/
@@ -234,6 +252,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
+
 
 @media (max-width: 768px) {
   .navbar {
