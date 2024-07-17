@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
-/************ Navbar Css ************/
+/************ Navbar mobile Css ************/
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -81,10 +81,11 @@ span.navbar-text {
   align-items: center;
 }
 
-.connect-btn .nav-link {
-  color: white;
-  /* Other styles */
+span.navbar-text .social-icon {
+  padding-bottom: 12px;
 }
+
+
 
 .custom-navbar-collapse {
   flex-direction: column;
@@ -97,7 +98,7 @@ span.navbar-text {
 .custom-navbar-collapse .navbar-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   font-size: 44px;
 }
 
@@ -112,6 +113,78 @@ span.navbar-text {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+/* Desktop Navbar Styles */
+.desktop-navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+}
+
+.desktop-navbar.scrolled {
+  padding: 0px 0;
+  background-color: #121212;
+}
+
+.desktop-navbar .desktop-navbar-nav .desktop-nav-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+.desktop-navbar .desktop-navbar-nav .desktop-nav-link:hover,
+.desktop-navbar .desktop-navbar-nav .desktop-nav-link.active {
+  opacity: 1;
+}
+
+.desktop-navbar-text {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-navbar-text .desktop-social-icon {
+  padding-bottom: 12px;
+}
+
+.desktop-custom-navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop-custom-navbar-collapse .desktop-navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-custom-navbar-collapse .desktop-navbar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-left: auto;
+}
+
+@media (min-width: 992px) {
+  .desktop-navbar-collapse {
+    justify-content: space-between;
+  }
+
+  .desktop-navbar-collapse .desktop-me-auto {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .desktop-navbar-collapse .desktop-navbar-text {
+    margin-left: auto;
+  }
 }
 
 

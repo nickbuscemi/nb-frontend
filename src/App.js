@@ -12,16 +12,45 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Projects2 } from './components/Projects2';
 import { ProjectsAll }  from './components/ProjectsAll';
+import { NavBarDesk } from './components/NavBarDesktop';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { useState, useEffect } from 'react';
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+};
+
 function App() {
+
+  const { width } = useWindowSize(); 
+  const isDesktop = width >= 768;
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
           <Route exact path="/" element={
             <>
-            <NavBar />
+            {isDesktop ? <NavBarDesk /> : <NavBar />}
               <Banner />
               <Skills />
               <Projects2 />
