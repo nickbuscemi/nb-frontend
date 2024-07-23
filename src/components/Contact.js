@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
 
-const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_URL : 'http://localhost:5252/contact';
+const apiUrl = process.env.NODE_ENV === 'production'  ? "https://nb-backend-8531f767ee68.herokuapp.com/contact" :'http://localhost:5252/contact';
 console.log('API URL:', apiUrl);
 
 
