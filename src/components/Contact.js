@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
 
+const productionUrl = process.env.REACT_APP_PROD_URL
+const developmentUrl = "http://localhost:5252/contact"
+
 export const Contact = () => {
     const formInitialDetails = {
         firstName: '',
@@ -70,7 +73,7 @@ export const Contact = () => {
 
         setButtonText('Sending...');
         try {
-            let response = await fetch("http://localhost:5252/contact", {
+            let response = await fetch(productionUrl || developmentUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
