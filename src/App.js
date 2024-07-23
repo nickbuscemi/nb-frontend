@@ -14,6 +14,8 @@ import { Projects2 } from './components/Projects2';
 import { ProjectsAll }  from './components/ProjectsAll';
 import { NavBarDesk } from './components/NavBarDesktop';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
+
 
 import { useState, useEffect } from 'react';
 

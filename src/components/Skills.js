@@ -30,7 +30,7 @@ export const Skills = () => {
             <Container>
                 <Row>
                     <Col>
-                        <div className="skill-bx">
+                        <div className="skill-bx animate__animated animate__fadeInUp">
                             <h2>Skills</h2>
                             <p>Gained through a combination of Degree coursework, Coding BootCamp curriculum, and years of self-education</p>
                             <Carousel 
